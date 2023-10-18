@@ -1,11 +1,11 @@
 @Library("mylibrary")_
 node('built-in')
 {
-    stage('ContDownload')
+    stage('ContDownload-loans')
     {
          math.newGit('maven23')
     }
-    stage('ContBuilt')
+    stage('ContBuilt-loans')
     {
         math.newMaven23()
     }
