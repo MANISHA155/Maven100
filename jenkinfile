@@ -9,10 +9,8 @@ node('built-in')
     {
         math.newMaven23()
     }
-    stage('ContDeploy')
-    {
-    
-        math.newDeploy("Scriptedpipelinewithsharelibraries","10.0.1.238","testapp4")
+    stage('ContDeploy'){
+       math.newDeploy("Scriptedpipelinewithsharelibraries","10.0.1.238","testapp4")
     }
     stage('ContTesting')
     {
