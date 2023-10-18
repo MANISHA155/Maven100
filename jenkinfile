@@ -11,10 +11,11 @@ node('built-in')
     }
     stage('ContDeploy')
     {
-        
+    
         math.newDeploy("Scriptedpipelinewithsharelibraries","10.0.1.238","testapp4")
     }
     stage('ContTesting')
     {
         git 'https://github.com/MANISHA155/testing.git'
     }
+      
