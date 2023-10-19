@@ -1,7 +1,9 @@
-@Library('mylibrary')_
-node('buil-in'){
-    stage("Download code"){
-        newGit('maven23')
-    }
-}
 
+@Library('mylibrary')_
+
+node('built-in')
+{
+    stage('ContDownload')
+    {
+        math.newDownload("maven23")
+    }
