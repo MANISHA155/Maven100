@@ -1,10 +1,5 @@
-
-@Library('mylibrary')_
-
-node('built-in')
-{
-    stage('ContDownload')
-    {
-        math.newDownload("maven23")
+node('built-in'){
+    stage("download code"){
+        git "https://github.com/MANISHA155/maven23.git"
     }
-
+}
