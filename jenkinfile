@@ -5,15 +5,4 @@ node('built-in')
     {
          math.newGit('maven23')
     }
-    stage('ContBuilt')
-    {
-        math.newMaven23()
-    }
-    stage('ContDeploy'){
-       math.newDeploy("Scriptedpipelinewithsharelibraries","10.0.1.238","testapp4")
-    }
-    stage('ContTesting')
-    {
-       math.newGit('FunctionalTesting')
-    }
       
