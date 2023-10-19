@@ -1,6 +1,6 @@
 @Library('mylibrary')_
 node('buil-in'){
-    stage("download code"){
+    stage("Download code"){
         newGit('maven23')
     }
 }
