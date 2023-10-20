@@ -1,12 +1,26 @@
-@Library("mylibrary")_
-node('built-in')
+@Library('mylibrary')_
+pipeline
 {
-    stage('ContDownload-loans')
+    agent any
+    stages
     {
-         math.newGit('maven23')
-    }
-    stage('ContBuilt-loans')
-    {
-        math.newMaven23()
-    }
-    
+        stage('ContDownload')
+        {
+            steps
+            {
+                script
+                {
+                    math.newGit('maven23')
+                }
+            }
+        }
+         stage('ContBuild')
+        {
+            steps
+            {
+                script
+                {
+                     math.newMaven23()
+                }
+            }
+        }
