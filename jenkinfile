@@ -14,5 +14,48 @@ pipeline
                 }
             }
         }
+        stage('ContBuild')
+        {
+            steps
+            {
+                script
+                {
+                     math.newMaven23()
+                }
+            }
+        }
+        stage('Contdeployment')
+        {
+            steps
+            {
+                script
+                {
+                     math.newDeploy("Shared1","10.0.1.238","testapp4")
+                }
+            }
+        }
+        stage('ContinuosTesting')
+        {
+            steps
+            {
+                script
+                {
+                     math.newGit("FunctionalTesting")
+                     math.runSelenium("Shared1")
+                     
+                }
+            }
+        }
+        stage('ContDelivery')
+        {
+            steps
+            {
+                script
+                {
+                    math.newDeploy("Shared1","10.0.1.25","prodapp1")
+                    
+                }
+            }
+        }
     }
-}
+}    
