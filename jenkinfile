@@ -14,14 +14,5 @@ pipeline
                 }
             }
         }
-         stage('ContBuild')
-        {
-            steps
-            {
-                script
-                {
-                     math.newMaven23()
-                }
-            }
-        }
+    }
 }
